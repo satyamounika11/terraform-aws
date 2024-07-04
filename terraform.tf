@@ -11,11 +11,3 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
-
- backend "s3" {
-    bucket         = "demo-github-action-tf"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    dynamodb_table = "terraform-lock"  # Optional
-    encrypt        = true
-  }
