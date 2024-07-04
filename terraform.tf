@@ -12,12 +12,10 @@ provider "aws" {
   region = "us-east-1"
 }
 
-resource "aws_s3_bucket" "new_bucket" {
-  bucket = "demo-github-action-tf"
-
-  object_lock_enabled = false
-
-  tags = {
-    Environment = "Prod"
+ backend "s3" {
+    bucket         = "demo-github-action-tf"
+    key            = "terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "terraform-lock"  # Optional
+    encrypt        = true
   }
-}
