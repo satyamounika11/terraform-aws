@@ -3,7 +3,7 @@ terraform {
     bucket         = "demo-github-action-tf"
     key            = "terraform.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "terraform-lock" 
+    dynamodb_table = "terraform-lock"
     encrypt        = true
   }
 }
